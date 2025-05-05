@@ -4,13 +4,13 @@ pipeline {
   stages {
     stage('Pull Node Image') {
       steps {
-        bat 'docker pull node:16-alpine'
+        sh 'docker pull node:16-alpine'
       }
     }
 
     stage('Run Node Version Check') {
       steps {
-        bat 'docker run -d node:16-alpine node --version'
+        sh 'docker run -d node:16-alpine node --version'
       }
     }
   }
